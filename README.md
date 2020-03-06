@@ -1,2 +1,2 @@
-# sharp-in
+# Sharp-in
 Improve image quality
