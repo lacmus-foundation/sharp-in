@@ -6,11 +6,14 @@ import numpy as np
 from modules.u_net import define_unet
 
 gpath = Path('')
-imgs_folder = 'images'
+imgs_folder = 'output'
+
+if imgs_folder not in os.listdir(gpath):
+    os.mkdir(Path(gpath, imgs_folder))
 
 img_rows            = 512
 img_cols            = 512   
-weights_path        = Path(gpath, 'weights', 'universal weights.h5')
+weights_path        = Path(gpath, 'weights.h5')
 
 unet = define_unet(img_rows, img_cols, optimizer=Adam(learning_rate=1e-4))
 
