@@ -28,7 +28,7 @@ Results "before - after" look like:
 Tool was trained to improve photos from drones. If you wish to train it for another domain, you have to create your own dataset with **prepare_dataset_for_superresolution.ipynb** notebook.
 
 
-#### General idea if training
+#### General idea of training
 Any images can be used for training. Tool requires 512x512 shaped images as target data and the same images, but with reduced quality, as training data.
 DS preparation notebook works both with annotated and non-annotated images. 
 
