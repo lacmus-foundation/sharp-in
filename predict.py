@@ -6,10 +6,7 @@ import numpy as np
 from modules.u_net import define_unet
 
 gpath = Path('')
-imgs_folder = 'output'
-
-if imgs_folder not in os.listdir(gpath):
-    os.mkdir(Path(gpath, imgs_folder))
+imgs_folder = 'MyImages'
 
 img_rows            = 512
 img_cols            = 512   
