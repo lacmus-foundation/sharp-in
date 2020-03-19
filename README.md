@@ -21,7 +21,7 @@ Results "before - after" look like:
 - download [weights](https://drive.google.com/file/d/1vYSVbBqZt15jGuVkkMWxK98ORmi6yjp-/view?usp=sharing) to the same folder with **predict.py**;
 - create folder **'MyImages'** at the same location and put there files to predict;
 - run **predict.py**;
-- resulting images will be appear shortly in **'MyImages'** folder.
+- resulting images will appear shortly in **'MyImages'** folder.
 
 
 ### Train your own weights
