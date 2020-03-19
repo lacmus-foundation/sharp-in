@@ -50,7 +50,7 @@ Other params:
 
 #### Training
 
-When dataset is prepared, training can be started. Use **train.py** fro that purpose.
+When dataset is prepared, training can be started. Use **train.py** for that purpose.
 
 Good settings to start: Adam optimizer with lr=1e-3 and Cosine LR scheduler. Batch size of 8 or 16 is acceptable.
 
