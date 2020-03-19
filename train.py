@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 gpath = Path('')
-dataset_path        = Path('E:\c6i512')       
+dataset_path        = Path('E:\dataset')       
 
 test_trainval_split = 0.02
 trainval_split      = 0.8
