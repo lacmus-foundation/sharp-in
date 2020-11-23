@@ -1,11 +1,12 @@
 # Sharp-In
+
 ## Improve image quality utility
 
 ### Description
 
-The tool is designed to improve images quality. At the moment it accepts JPG RGB images of 512x512 size and returns images of the same size. 
+The tool is designed to improve the images quality. At the moment, the tool accepts 512x512 JPG RGB images and returns images of the same size. 
 
-Results "before - after" look like:
+The before/after results look as follows:
 
 <img src = "https://github.com/lacmus-foundation/sharp-in/blob/master/images/59.jpg">
 
@@ -13,46 +14,49 @@ Results "before - after" look like:
 
 <img src = "https://github.com/lacmus-foundation/sharp-in/blob/master/images/109.jpg">
 
-[More examples.](https://github.com/lacmus-foundation/sharp-in/blob/master/images)
+[See more examples](https://github.com/lacmus-foundation/sharp-in/blob/master/images).
 
 ### Usage
 
-- clone this project;
-- download [weights](https://drive.google.com/file/d/1vYSVbBqZt15jGuVkkMWxK98ORmi6yjp-/view?usp=sharing) to the same folder with **predict.py**;
-- create folder **'MyImages'** at the same location and put there files to predict;
-- run **predict.py**;
-- resulting images will be appear shortly in **'MyImages'** folder.
+1. Clone this project.
+2. Download [weights](https://drive.google.com/file/d/1vYSVbBqZt15jGuVkkMWxK98ORmi6yjp-/view?usp=sharing) to the `sharp-in` project folder.
+3. Create the `MyImages` folder at the project folder.
+4. Put files to predict to the `MyImages` folder and then run `predict.py`. 
+5. The resulting images will appear shortly in the `MyImages` folder.
 
+### Your own weights training
 
-### Train your own weights
-Tool was trained to improve photos from drones. If you wish to train it for another domain, you have to create your own dataset with **prepare_dataset_for_superresolution.ipynb** notebook.
+The tool was trained to improve photos from drones. If you want to train it for another domain, create your own dataset with the `prepare_dataset_for_superresolution.ipynb` notebook.
 
+#### General idea of the training
 
-#### General idea if training
-Any images can be used for training. Tool requires 512x512 shaped images as target data and the same images, but with reduced quality, as training data.
-DS preparation notebook works both with annotated and non-annotated images. 
+You can use any images for training unless they meet the following requirements:
+- 512x512 size images as the target data.
+- The same images of the reduced quality as the training data.
 
+The dataset preparation notebook works both with annotated and non-annotated images. 
 
 #### Training dataset preparation
-From each image in *dataset_paths* folders it:
-- takes crop of *initial_crop_size*;
-- then resize the crop to *crop_size* - this will be **y** images;
-- compress it with *compress_ratios* ratios and reshapes back to *output_size* - this will be **X** images;
-- resulting **X** and **y** images being stored in *crops_folder*, in respective folders.
 
-To use notebook with annotated datasets run *get_target_crops()*. In this case crops around target areas will be prepared. 
-Otherwise use *get_random_crops()*, it will make *crops_per_image* random crops from each source image.
+From each image in the `dataset_paths` folders it:
+1. Takes crop of `initial_crop_size`.
+2. Resizes the crop to `crop_size` - this will be **y** images.
+3. Compresses it with the `compress_ratios` ratios and reshapes back to `output_size` - this will be **X** images.
+4. The resulting **X** and **y** images are stored in the respective folders inside `crops_folder`. 
 
-Other params:
-- *r_files_per_dataset*: qty of files in folder use for random crops;
-- *b_files_per_dataset*: qty of files in folder use for target crops.
+You can use the notebook with annotated dataset with two types of crops:
+- To get crops around target areas, run `get_target_crops()`. 
+- To get `crops_per_image` random crops from each source image, run `get_random_crops()`. 
 
+Other parameters:
+- `b_files_per_dataset`: qty of files in the folder used for target crops.
+- `r_files_per_dataset`: qty of files in the folder used for random crops.
 
 #### Training
 
-When dataset is prepared, training can be started. Use **train.py** fro that purpose.
+When the dataset is prepared, run `train.py` to start the training.
 
-Good settings to start: Adam optimizer with lr=1e-3 and Cosine LR scheduler. Batch size of 8 or 16 is acceptable.
+The recommended settings to start with: Adam optimizer with lr=1e-3 and Cosine LR scheduler. The batch size of 8 or 16 is acceptable.
 
 
 
