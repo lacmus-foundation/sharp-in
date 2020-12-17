@@ -56,7 +56,7 @@ Other parameters:
 
 When the dataset is prepared, run `train.py` to start the training.
 
-The recommended settings to start with: Adam optimizer with lr=1e-3 and Cosine LR scheduler. The batch size of 8 or 16 is acceptable.
+The recommended settings to start with: Adam optimizer with lr=1e-3 and Cosine LR scheduler. The batch size of 8 or  16 is acceptable.
 
 
 
