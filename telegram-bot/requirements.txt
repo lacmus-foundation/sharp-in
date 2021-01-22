@@ -1,9 +1,0 @@
-tensorflow
-fastapi
-fastapi-utils
-python-multipart
-uvicorn
-pytelegrambotapi
-pydantic
-typing
-pathlib

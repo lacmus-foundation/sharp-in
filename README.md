@@ -34,7 +34,7 @@ You can use any images for training unless they meet the following requirements:
 - 512x512 size images as the target data.
 - The same images of the reduced quality as the training data.
 
-The dataset preparation notebook works both with annotated and non-annotated images. 
+The dataset preparation notebook works both with annotated and non-annotated images.  
 
 #### Training dataset preparation
 
